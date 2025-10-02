@@ -26,44 +26,44 @@ const LOVE_LANGUAGES = {
 const GIVING_QUESTIONS = [
     {
         id: 1,
-        text: { en: "I feel most loving when I...", bg: "Чувствам се най-обичлив/а, когато..." },
+        text: { en: "When I feel like showing love, I most often do it by...", bg: "Когато ми идва да изразя обич към някой, най-често го правя като..." },
         options: [
-            { label: { en: "Offer to help with a task or project they're stressed about", bg: "Предлагам помощ с задача или проект, за да им облекча напрежението" }, value: 'A' },
+            { label: { en: "Offer to help with a task or project they're stressed about", bg: "Помагам със задача или проект, за да облекча товара на партньора си" }, value: 'A' },
             { label: { en: "Give them a heartfelt, unprompted hug or touch their arm", bg: "Давам им сърдечна, спонтанна прегръдка или докосвам ръката им" }, value: 'B' },
             { label: { en: "Sit down and give them my full, undivided attention", bg: "Сядам и им отдавам цялото си внимание, без да се разсейвам" }, value: 'C' },
-            { label: { en: "Surprise them with a small gift I knew they'd like", bg: "Изненадвам ги с малък подарък, за който знам, че ще им хареса" }, value: 'D' },
-            { label: { en: "Tell them sincerely how much they mean to me", bg: "Искрено им изразявам с думи колко много значат за мен" }, value: 'E' }
+            { label: { en: "Surprise them with a small gift I knew they'd like", bg: "Изненадвам ги с малък подарък, който знам, че ще им хареса" }, value: 'D' },
+            { label: { en: "Tell them sincerely how much they mean to me", bg: "Напомням им колко много значат за мен" }, value: 'E' }
         ]
     },
     {
         id: 2,
         text: { en: "My ideal way to celebrate a loved one's achievement is to...", bg: "Идеалният ми начин да отпразнувам постижението на любим човек е да..." },
         options: [
-            { label: { en: "Cook them their favorite meal to free up their time", bg: "Сготвя любимото им ястие, за да им освободя време" }, value: 'A' },
-            { label: { en: "Give them a big, celebratory high-five or hug", bg: "Дам им голяма, празнична прегръдка или пляскане с ръка" }, value: 'B' },
-            { label: { en: "Listen intently as they recount every detail of their success", bg: "Слушам внимателно, докато разказват всеки детайл от успеха си" }, value: 'C' },
-            { label: { en: "Buy them a gift to commemorate the occasion", bg: "Купя им подарък, за да отбележа случая" }, value: 'D' },
-            { label: { en: "Write them a card or toast explaining how proud I am", bg: "Напиша им картичка или произнеса тост, за да изразя гордостта си" }, value: 'E' }
+            { label: { en: "Cook them their favorite meal to free up their time", bg: "Сготвя любимото им ястие" }, value: 'A' },
+            { label: { en: "Give them a big, celebratory high-five or hug", bg: "С голяма, празнична прегръдка" }, value: 'B' },
+            { label: { en: "Listen intently as they recount every detail of their success", bg: "Окуражавам го да ми разкаже за постижението и слушам с ентусиазъм" }, value: 'C' },
+            { label: { en: "Buy them a gift to commemorate the occasion", bg: "Като ги изненадам с подаръче, за да отбележа случая" }, value: 'D' },
+            { label: { en: "Write them a card or toast explaining how proud I am", bg: "Като им напиша насърчаващо послание и отбележа колко много се гордея с него/нея." }, value: 'E' }
         ]
     },
     {
         id: 3,
         text: { en: "When I see my partner is stressed, my first instinct is to...", bg: "Когато видя, че партньорът ми е стресиран, първият ми инстинкт е да..." },
         options: [
-            { label: { en: "Take over one of their chores to lighten their load", bg: "Поемам една от задачите им, за да облекча натоварването им" }, value: 'A' },
-            { label: { en: "Give them a shoulder rub or hold their hand", bg: "Масажирам раменете им или държа ръката им" }, value: 'B' },
-            { label: { en: "Ask them to talk about it and just listen without solving it", bg: "Помолвам ги да говорят за това и просто слушам, без да решавам проблема" }, value: 'C' },
-            { label: { en: "Bring them their favorite coffee or snack to cheer them up", bg: "Носѝм им любимото кафе или закуска, за да ги зарадвам" }, value: 'D' },
-            { label: { en: "Encourage them with words like, 'You've got this, I believe in you'", bg: "Окуражавам ги с думи като: 'Ще се справиш, вярвам в теб'" }, value: 'E' }
+            { label: { en: "Take over one of their chores to lighten their load", bg: "Поема една от задачите им, за да ги облекча" }, value: 'A' },
+            { label: { en: "Give them a shoulder rub or hold their hand", bg: "Им направя масаж или просто да държа ръката им" }, value: 'B' },
+            { label: { en: "Ask them to talk about it and just listen without solving it", bg: "Насърчавам ги да споделят какво ги мъчи и слушам с емпатия, без да решавам проблема" }, value: 'C' },
+            { label: { en: "Bring them their favorite coffee or snack to cheer them up", bg: "Нося им любимото кафе или закуска" }, value: 'D' },
+            { label: { en: "Encourage them with words like, 'You've got this, I believe in you'", bg: "Окуражавам: 'Ще се справиш, вярвам в теб'" }, value: 'E' }
         ]
     },
     {
         id: 4,
         text: { en: "I express my love most frequently through...", bg: "Най-често изразявам любовта си чрез..." },
         options: [
-            { label: { en: "Actions and service, like making them breakfast or fixing things", bg: "Действия и услуги, като да им приготвя закуска или поправя нещо" }, value: 'A' },
+            { label: { en: "Actions and service, like making them breakfast or fixing things", bg: "Като им приготвя закуска или поправя нещо" }, value: 'A' },
             { label: { en: "Physical closeness, like cuddling on the couch or holding hands", bg: "Физическа близост, като гушкане на дивана или държане за ръка" }, value: 'B' },
-            { label: { en: "Deep, focused conversations about their thoughts and feelings", bg: "Дълбоки, съсредоточени разговори за мислите и чувствата им" }, value: 'C' },
+            { label: { en: "Deep, focused conversations about their thoughts and feelings", bg: "Дълбоки и пълноценни разговори за мислите и чувствата им" }, value: 'C' },
             { label: { en: "Thoughtful gifts and mementos", bg: "Обмислени подаръци и сувенири" }, value: 'D' },
             { label: { en: "Verbal affirmations, compliments, and 'I love you's", bg: "Думи на утвърждение, комплименти и 'обичам те'" }, value: 'E' }
         ]
@@ -94,9 +94,9 @@ const GIVING_QUESTIONS = [
         id: 7,
         text: { en: "When I want to show love spontaneously, I usually...", bg: "Когато искам спонтанно да покажа любов, обикновено..." },
         options: [
-            { label: { en: "Do a quick helpful favor", bg: "Правя бърза полезна услуга" }, value: 'A' },
+            { label: { en: "Do a quick helpful favor", bg: "Правя нещо полезно за тях" }, value: 'A' },
             { label: { en: "Give a kiss, hug, or gentle touch", bg: "Давам целувка, прегръдка или нежно докосване" }, value: 'B' },
-            { label: { en: "Offer my full attention for a few minutes", bg: "Отдавам пълното си внимание за няколко минути" }, value: 'C' },
+            { label: { en: "Offer my full attention for a few minutes", bg: "Отдавам им пълното си внимание за момента" }, value: 'C' },
             { label: { en: "Leave a little gift or treat", bg: "Оставям малък подарък или лакомство" }, value: 'D' },
             { label: { en: "Say something sweet from the heart", bg: "Казвам нещо мило от сърце" }, value: 'E' }
         ]
@@ -117,7 +117,7 @@ const GIVING_QUESTIONS = [
         text: { en: "When I want to make my partner feel special, I...", bg: "Когато искам да накарам партньора си да се почувства специален, аз..." },
         options: [
             { label: { en: "Do something useful for them", bg: "Правя нещо полезно за тях" }, value: 'A' },
-            { label: { en: "Hold them close", bg: "Гушкам ги близо до себе си" }, value: 'B' },
+            { label: { en: "Hold them close", bg: "Държа ги близо до себе си" }, value: 'B' },
             { label: { en: "Spend one-on-one time with them", bg: "Прекарвам време насаме с тях" }, value: 'C' },
             { label: { en: "Choose a meaningful gift for them", bg: "Избирам смислен подарък за тях" }, value: 'D' },
             { label: { en: "Express how much I value them", bg: "Изразявам колко ги ценя" }, value: 'E' }
@@ -127,11 +127,11 @@ const GIVING_QUESTIONS = [
         id: 10,
         text: { en: "If my partner had a hard day, I’d...", bg: "Ако партньорът ми е имал труден ден, аз бих..." },
         options: [
-            { label: { en: "Take care of something to ease their stress", bg: "Погрижвам се за нещо, за да облекча стреса им" }, value: 'A' },
+            { label: { en: "Take care of something to ease their stress", bg: "Се погрижил за нещо, за да облекча стреса им" }, value: 'A' },
             { label: { en: "Give them a massage or cuddle", bg: "Масажирам ги или ги гушкам" }, value: 'B' },
-            { label: { en: "Sit and talk it out with them", bg: "Сядам и разговарям с тях" }, value: 'C' },
-            { label: { en: "Bring home a small surprise gift", bg: "Донасям малък изненадващ подарък" }, value: 'D' },
-            { label: { en: "Tell them how strong and capable they are", bg: "Казвам им колко са силни и способни" }, value: 'E' }
+            { label: { en: "Sit and talk it out with them", bg: "Сядам да го обсъдим с тях" }, value: 'C' },
+            { label: { en: "Bring home a small surprise gift", bg: "Изненадвам ги с малък подарък" }, value: 'D' },
+            { label: { en: "Tell them how strong and capable they are", bg: "Напомням им колко им се възхищавам" }, value: 'E' }
         ]
     },
     {
@@ -230,13 +230,13 @@ const RECEIVING_QUESTIONS = [
     },
     {
         id: 4,
-        text: { en: "I feel most valued when my partner...", bg: "Чувствам се най-ценен/а, когато партньорът ми..." },
+        text: { en: "I feel most valued when my partner...", bg: "Чувствам се най-оценен/а, когато партньорът ми..." },
         options: [
             { label: { en: "Shares responsibilities with me", bg: "Споделя отговорностите с мен" }, value: 'A' },
-            { label: { en: "Holds me lovingly", bg: "Ме държи с обич" }, value: 'B' },
-            { label: { en: "Spends focused time with me", bg: "Прекарва съсредоточено време с мен" }, value: 'C' },
-            { label: { en: "Gives gifts on special occasions", bg: "Подарява подаръци на специални поводи" }, value: 'D' },
-            { label: { en: "Speaks kind words often", bg: "Често казва мили думи" }, value: 'E' }
+            { label: { en: "Holds me lovingly", bg: "Ме обгръща с обич" }, value: 'B' },
+            { label: { en: "Spends focused time with me", bg: "Прекарва пълноценно време с мен" }, value: 'C' },
+            { label: { en: "Gives gifts on special occasions", bg: "Ми прави подаръци при специални поводи" }, value: 'D' },
+            { label: { en: "Speaks kind words often", bg: "Често ме ласкае с мили думи" }, value: 'E' }
         ]
     },
     {
