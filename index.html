@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Language Duo Quiz: Giving & Receiving Vibes</title>
+    <title data-i18n="page-title">Love Language Duo Quiz: Giving & Receiving Vibes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="container">
         <header>
-            <h1>💕 Love Language Duo Quiz 💕</h1>
-            <p>Deep dive: 30 questions exploring how you give and receive love — ranked results await!</p>
+            <div class="language-toggle">
+                <button onclick="app.setLanguage('en')" id="lang-en" class="active">EN</button>
+                <button onclick="app.setLanguage('bg')" id="lang-bg">БГ</button>
+            </div>
+            <h1 data-i18n="header-title">💕 Love Language Duo Quiz 💕</h1>
+            <p data-i18n="header-subtitle">Deep dive: 30 questions exploring how you give and receive love — ranked
+                results await!</p>
         </header>
-        
+
         <div id="progress">
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <div class="stage-info" id="stageInfo">Ready to start!</div>
         </div>
-        
+
         <div id="intro" class="quiz-section active">
-            <h2>Welcome to the Love Fest!</h2>
-            <p>This comprehensive quiz (30 questions total) uncovers how you <strong>give</strong> love (first 15) and <strong>receive</strong> it (next 15). Get ranked scores for all 5 languages, plus insights on your ideal partner match.</p>
-            <button onclick="app.startQuiz()">Let's Dive In! 🚀</button>
+            <h2 data-i18n="intro-title">Welcome to the Love Fest!</h2>
+            <p data-i18n="intro-text">This comprehensive quiz (30 questions total) uncovers how you
+                <strong>give</strong> love (first 15) and <strong>receive</strong> it (next 15). Get ranked scores for
+                all 5 languages, plus insights on your ideal partner match.</p>
+            <button onclick="app.startQuiz()" data-i18n="btn-start">Let's Dive In! 🚀</button>
         </div>
-        
+
         <div id="givingQuiz" class="quiz-section">
-            <h2>Part 1: How You Give Love 🌟</h2>
-            <p>Choose the option that best describes your natural way of showing love and appreciation.</p>
+            <h2 data-i18n="giving-title">Part 1: How You Give Love 🌟</h2>
+            <p data-i18n="giving-subtitle">Choose the option that best describes your natural way of showing love and
+                appreciation.</p>
             <div id="givingQuestion"></div>
-            <button id="nextGiving" onclick="app.nextQuestion()" disabled>Next Question</button>
+            <button id="nextGiving" onclick="app.nextQuestion()" disabled data-i18n="btn-next">Next Question</button>
         </div>
-        
+
         <div id="receivingQuiz" class="quiz-section">
-            <h2>Part 2: How You Receive Love 💖</h2>
-            <p>Choose what makes you feel most loved and valued by others.</p>
+            <h2 data-i18n="receiving-title">Part 2: How You Receive Love 💖</h2>
+            <p data-i18n="receiving-subtitle">Choose what makes you feel most loved and valued by others.</p>
             <div id="receivingQuestion"></div>
-            <button id="nextReceiving" onclick="app.nextQuestion()" disabled>Next Question</button>
+            <button id="nextReceiving" onclick="app.nextQuestion()" disabled data-i18n="btn-next">Next Question</button>
         </div>
-        
+
         <div id="results" class="quiz-section">
-            <h2>Your Love Language Profile! 🎉</h2>
-            
+            <h2 data-i18n="results-title">Your Love Language Profile! 🎉</h2>
+
             <div class="results-section">
-                <h3>How You Give Love</h3>
+                <h3 data-i18n="results-giving-header">How You Give Love</h3>
                 <div id="givingBars"></div>
                 <div class="ranked-list" id="givingRanked"></div>
             </div>
-            
+
             <div class="section-divider"></div>
-            
+
             <div class="results-section">
-                <h3>How You Receive Love</h3>
+                <h3 data-i18n="results-receiving-header">How You Receive Love</h3>
                 <div id="receivingBars"></div>
                 <div class="ranked-list" id="receivingRanked"></div>
             </div>
-            
+
             <div class="section-divider"></div>
-            
+
             <div class="match-tip">
-                <h3>💡 Relationship Insights</h3>
+                <h3 data-i18n="insights-header">💡 Relationship Insights</h3>
                 <div id="insights"></div>
             </div>
-            
-            <button onclick="app.resetQuiz()">Take Quiz Again</button>
+
+            <button onclick="app.resetQuiz()" data-i18n="btn-retake">Take Quiz Again</button>
         </div>
     </div>
 
     <script src="questions.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
