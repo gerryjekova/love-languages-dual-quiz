@@ -15,6 +15,12 @@
                 <button onclick="app.setLanguage('en')" id="lang-en" class="active">EN</button>
                 <button onclick="app.setLanguage('bg')" id="lang-bg">БГ</button>
             </div>
+
+            <div id="theme-toggle" class="theme-toggle">
+                <button data-theme="light" class="active">☀️ Light</button>
+                <button data-theme="dark">🌙 Dark</button>
+            </div>
+
             <h1 data-i18n="header-title">💕 Love Language Duo Quiz 💕</h1>
             <p data-i18n="header-subtitle">Deep dive: 30 questions exploring how you give and receive love — ranked
                 results await!</p>
@@ -31,7 +37,8 @@
             <h2 data-i18n="intro-title">Welcome to the Love Fest!</h2>
             <p data-i18n="intro-text">This comprehensive quiz (30 questions total) uncovers how you
                 <strong>give</strong> love (first 15) and <strong>receive</strong> it (next 15). Get ranked scores for
-                all 5 languages, plus insights on your ideal partner match.</p>
+                all 5 languages, plus insights on your ideal partner match.
+            </p>
             <button onclick="app.startQuiz()" data-i18n="btn-start">Let's Dive In! 🚀</button>
         </div>
 
