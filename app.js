@@ -63,6 +63,7 @@ const app = {
     givingAnswers: [],
     receivingAnswers: [],
     currentLanguage: 'en',
+    currentTheme: 'light',
     
     // Initialize the app
     init() {
@@ -70,6 +71,20 @@ const app = {
         // Load saved language preference
         const savedLang = localStorage.getItem('preferredLanguage') || 'en';
         this.setLanguage(savedLang);
+
+        // Load saved theme preference
+this.currentTheme = localStorage.getItem('theme') || 'light';
+document.body.classList.add(this.currentTheme);
+
+// Set up theme toggle buttons
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.querySelectorAll('button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === this.currentTheme);
+        btn.addEventListener('click', () => this.switchTheme(btn.dataset.theme));
+    });
+}
+
     },
     
     // Set language
@@ -110,6 +125,8 @@ const app = {
             }
         });
     },
+
+    
     
     // Start the quiz
     startQuiz() {
@@ -380,7 +397,20 @@ const app = {
         
         this.showSection('intro');
         this.updateProgress();
-    }
+    },
+
+    switchTheme(theme) {
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+    this.currentTheme = theme;
+    
+    const themeButtons = document.querySelectorAll('#theme-toggle button');
+    themeButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === theme);
+    });
+},
+
 };
 
 // Initialize app when page loads
