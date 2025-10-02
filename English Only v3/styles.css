@@ -22,10 +22,18 @@ header {
     padding: 30px;
     text-align: center;
     border-bottom: 3px solid #ff6b6b;
-    position: relative;
 }
 
+h1 {
+    margin: 0;
+    color: #d63384;
+    font-size: 2.5em;
+}
 
+header p {
+    margin: 10px 0 0 0;
+    color: #495057;
+}
 
 #progress {
     background: #f8f9fa;
@@ -58,58 +66,6 @@ header {
 .quiz-section {
     padding: 40px;
     display: none;
-}
-
-/* Language Toggle Styling */
-#language-toggle {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    display: flex;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 5px;
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-    border-color: #333;
-    border-width: 1px;
-}
-
-.language-toggle button {
-    background: transparent;
-    color: #495057;
-    border: 2px solid transparent;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0;
-}
-
-.language-toggle button:hover {
-    background: rgba(255, 255, 255, 0.5);
-    transform: scale(1);
-    border-width: 1px;
-}
-
-.language-toggle button.active {
-    background: white;
-    color: #d63384;
-    border-color: #d63384;
-    box-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
-}
-
-h1 {
-    margin: 0;
-    color: #d63384;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 10px 0 0 0;
-    color: #495057;
 }
 
 .quiz-section.active {
@@ -341,15 +297,7 @@ button:disabled {
     body {
         padding: 10px;
     }
-
-     .language-toggle {
-        position: static;
-        margin: 0 auto 15px auto;
-        width: fit-content;
-        border-color: #333;
-        border-width: 1px;
-    }
-
+    
     h1 {
         font-size: 1.8em;
     }
@@ -365,12 +313,5 @@ button:disabled {
     button {
         padding: 12px 24px;
         font-size: 1em;
-        
-    }
-    
-   
-    
-    header {
-        padding: 20px 15px;
     }
 }

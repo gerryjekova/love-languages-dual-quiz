@@ -1,13 +1,114 @@
+// Translations
+const TRANSLATIONS = {
+    en: {
+        'page-title': 'Love Language Duo Quiz: Giving & Receiving Vibes',
+        'header-title': '💕 Love Language Duo Quiz 💕',
+        'header-subtitle': 'Deep dive: 30 questions exploring how you give and receive love — ranked results await!',
+        'intro-title': 'Welcome to the Love Fest!',
+        'intro-text': 'This comprehensive quiz (30 questions total) uncovers how you <strong>give</strong> love (first 15) and <strong>receive</strong> it (next 15). Get ranked scores for all 5 languages, plus insights on your ideal partner match.',
+        'btn-start': "Let's Dive In! 🚀",
+        'giving-title': 'Part 1: How You Give Love 🌟',
+        'giving-subtitle': 'Choose the option that best describes your natural way of showing love and appreciation.',
+        'receiving-title': 'Part 2: How You Receive Love 💖',
+        'receiving-subtitle': 'Choose what makes you feel most loved and valued by others.',
+        'btn-next': 'Next Question',
+        'results-title': 'Your Love Language Profile! 🎉',
+        'results-giving-header': 'How You Give Love',
+        'results-receiving-header': 'How You Receive Love',
+        'insights-header': '💡 Relationship Insights',
+        'btn-retake': 'Take Quiz Again',
+        'question-of': 'Question ${current} of 15:',
+        'ready-to-start': 'Ready to start!',
+        'complete': 'Complete! 🎉',
+        'question-progress': 'Question ${current} of ${total}',
+        'insight-top-giving': '<strong>Your Top Giving Language:</strong> ${language}<br>You naturally show love through ${languageLower}. This is your instinctive way of expressing care and affection.',
+        'insight-top-receiving': '<strong>Your Top Receiving Language:</strong> ${language}<br>You feel most loved when you receive ${languageLower}. This fills your emotional tank.',
+        'insight-perfect-symmetry': '<strong>Perfect Symmetry!</strong><br>Your giving and receiving languages match (${language}). You naturally give what you want to receive. Look for partners who also value ${languageLower}, or be patient teaching others how you express love.',
+        'insight-golden-rule': '<strong>The Golden Rule vs. The Platinum Rule:</strong><br>You give love through ${givingLower} but receive it best through ${receivingLower}. Remember: your partner might need something different than what you naturally give. The ideal partner gives ${receivingLower} and appreciates receiving ${givingLower}.',
+        'insight-tips': '<strong>💡 Relationship Tips:</strong><br>• Communicate your top receiving language (${receiving}) to your partner clearly<br>• Don\'t assume your partner wants the same love language you give (${giving})<br>• Ask your partner to take this quiz too!<br>• The best relationships have partners who intentionally learn each other\'s languages'
+    },
+    bg: {
+        'page-title': 'Тест за Езиците на Любовта: Даване и Получаване',
+        'header-title': '💕 Тест за Езиците на Любовта 💕',
+        'header-subtitle': 'Задълбочено: 30 въпроса изследват как давате и получавате любов — класирани резултати ви очакват!',
+        'intro-title': 'Добре дошли във Фестивала на Любовта!',
+        'intro-text': 'Този цялостен тест (30 въпроса общо) разкрива как <strong>давате</strong> любов (първите 15) и <strong>получавате</strong> я (следващите 15). Получете класирани резултати за всичките 5 езика, плюс прозрения за идеалния ви партньор.',
+        'btn-start': 'Да започваме! 🚀',
+        'giving-title': 'Част 1: Как давате любов 🌟',
+        'giving-subtitle': 'Изберете опцията, която най-добре описва естествения ви начин да показвате любов и признателност.',
+        'receiving-title': 'Част 2: Как получавате любов 💖',
+        'receiving-subtitle': 'Изберете какво ви кара да се чувствате най-обичани и ценени от другите.',
+        'btn-next': 'Следващ въпрос',
+        'results-title': 'Вашият профил на езиците на любовта! 🎉',
+        'results-giving-header': 'Как давате любов',
+        'results-receiving-header': 'Как получавате любов',
+        'insights-header': '💡 Прозрения за връзките',
+        'btn-retake': 'Решете теста отново',
+        'question-of': 'Въпрос ${current} от 15:',
+        'ready-to-start': 'Готови за старт!',
+        'complete': 'Завършено! 🎉',
+        'question-progress': 'Въпрос ${current} от ${total}',
+        'insight-top-giving': '<strong>Вашият топ език на даване:</strong> ${language}<br>Вие естествено показвате любов чрез ${languageLower}. Това е вашият инстинктивен начин да изразявате грижа и обич.',
+        'insight-top-receiving': '<strong>Вашият топ език на получаване:</strong> ${language}<br>Чувствате се най-обичани, когато получавате ${languageLower}. Това пълни вашия емоционален резервоар.',
+        'insight-perfect-symmetry': '<strong>Перфектна симетрия!</strong><br>Вашите езици на даване и получаване съвпадат (${language}). Естествено давате това, което искате да получите. Търсете партньори, които също ценят ${languageLower}, или бъдете търпеливи, като учите другите как изразявате любов.',
+        'insight-golden-rule': '<strong>Златното правило срещу Платиненото правило:</strong><br>Давате любов чрез ${givingLower}, но я получавате най-добре чрез ${receivingLower}. Помнете: вашият партньор може да се нуждае от нещо различно от това, което естествено давате. Идеалният партньор дава ${receivingLower} и цени да получава ${givingLower}.',
+        'insight-tips': '<strong>💡 Съвети за връзки:</strong><br>• Съобщете ясно на партньора си топ езика си на получаване (${receiving})<br>• Не предполагайте, че партньорът ви иска същия език на любовта, който давате (${giving})<br>• Помолете партньора си да направи този тест също!<br>• Най-добрите връзки имат партньори, които съзнателно учат езиците един на друг'
+    }
+};
+
 // Main Quiz Application
 const app = {
-    currentSection: 'intro', // 'intro', 'giving', 'receiving', 'results'
+    currentSection: 'intro',
     currentQuestionIndex: 0,
     givingAnswers: [],
     receivingAnswers: [],
+    currentLanguage: 'en',
     
     // Initialize the app
     init() {
         this.updateProgress();
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        this.setLanguage(savedLang);
+    },
+    
+    // Set language
+    setLanguage(lang) {
+        this.currentLanguage = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        document.documentElement.lang = lang;
+        
+        // Update button states
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        document.getElementById('lang-bg').classList.toggle('active', lang === 'bg');
+        
+        // Update all translated elements
+        this.updateTranslations();
+        
+        // Re-render current question if in quiz
+        if (this.currentSection === 'giving' || this.currentSection === 'receiving') {
+            this.renderQuestion();
+        }
+        
+        // Re-render results if on results page
+        if (this.currentSection === 'results') {
+            this.showResults();
+        }
+    },
+    
+    // Update all translations
+    updateTranslations() {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (TRANSLATIONS[this.currentLanguage][key]) {
+                if (el.tagName === 'TITLE') {
+                    el.textContent = TRANSLATIONS[this.currentLanguage][key];
+                } else {
+                    el.innerHTML = TRANSLATIONS[this.currentLanguage][key];
+                }
+            }
+        });
     },
     
     // Start the quiz
@@ -25,23 +126,27 @@ const app = {
         const containerId = this.currentSection === 'giving' ? 'givingQuestion' : 'receivingQuestion';
         const container = document.getElementById(containerId);
         
+        const questionText = question.text[this.currentLanguage];
+        const questionPrefix = TRANSLATIONS[this.currentLanguage]['question-of'].replace('${current}', this.currentQuestionIndex + 1);
+        
         let html = `
             <div class="question-card">
                 <div class="question-text">
-                    Question ${this.currentQuestionIndex + 1} of 15: ${question.text}
+                    ${questionPrefix} ${questionText}
                 </div>
                 <div class="options">
         `;
         
         question.options.forEach((option, index) => {
             const optionId = `q${question.id}_option${index}`;
+            const optionLabel = option.label[this.currentLanguage];
             html += `
                 <div class="option" onclick="app.selectOption('${option.value}', this)">
                     <input type="radio" 
                            name="question${question.id}" 
                            id="${optionId}" 
                            value="${option.value}">
-                    <label for="${optionId}">${option.label}</label>
+                    <label for="${optionId}">${optionLabel}</label>
                 </div>
             `;
         });
@@ -56,21 +161,16 @@ const app = {
     
     // Handle option selection
     selectOption(value, element) {
-        // Remove previous selections
         const allOptions = element.parentElement.querySelectorAll('.option');
         allOptions.forEach(opt => opt.classList.remove('selected'));
         
-        // Mark this option as selected
         element.classList.add('selected');
         
-        // Check the radio button
         const radio = element.querySelector('input[type="radio"]');
         radio.checked = true;
         
-        // Store the answer
         this.currentAnswer = value;
         
-        // Enable the next button
         const buttonId = this.currentSection === 'giving' ? 'nextGiving' : 'nextReceiving';
         document.getElementById(buttonId).disabled = false;
     },
@@ -79,7 +179,6 @@ const app = {
     nextQuestion() {
         if (!this.currentAnswer) return;
         
-        // Save the answer
         if (this.currentSection === 'giving') {
             this.givingAnswers.push(this.currentAnswer);
         } else {
@@ -89,21 +188,17 @@ const app = {
         this.currentAnswer = null;
         this.currentQuestionIndex++;
         
-        // Check if section is complete
         if (this.currentQuestionIndex >= 15) {
             if (this.currentSection === 'giving') {
-                // Move to receiving section
                 this.currentSection = 'receiving';
                 this.currentQuestionIndex = 0;
                 this.showSection('receivingQuiz');
                 this.renderQuestion();
                 document.getElementById('nextReceiving').disabled = true;
             } else {
-                // Show results
                 this.showResults();
             }
         } else {
-            // Render next question
             this.renderQuestion();
             const buttonId = this.currentSection === 'giving' ? 'nextGiving' : 'nextReceiving';
             document.getElementById(buttonId).disabled = true;
@@ -126,7 +221,7 @@ const app = {
         return Object.entries(scores)
             .map(([key, value]) => ({ 
                 code: key, 
-                name: LOVE_LANGUAGES[key], 
+                name: LOVE_LANGUAGES[key][this.currentLanguage], 
                 score: value 
             }))
             .sort((a, b) => b.score - a.score);
@@ -143,15 +238,12 @@ const app = {
         const givingRanked = this.getRankedScores(givingScores);
         const receivingRanked = this.getRankedScores(receivingScores);
         
-        // Render giving scores
         this.renderScoreBars('givingBars', givingRanked);
         this.renderRankedList('givingRanked', givingRanked);
         
-        // Render receiving scores
         this.renderScoreBars('receivingBars', receivingRanked);
         this.renderRankedList('receivingRanked', receivingRanked);
         
-        // Generate insights
         this.renderInsights(givingRanked, receivingRanked);
         
         this.updateProgress();
@@ -208,47 +300,31 @@ const app = {
         const topGiving = givingRanked[0];
         const topReceiving = receivingRanked[0];
         
-        let insights = `
-            <div class="insight">
-                <strong>Your Top Giving Language:</strong> ${topGiving.name}<br>
-                You naturally show love through ${topGiving.name.toLowerCase()}. This is your instinctive way of expressing care and affection.
-            </div>
-            <div class="insight">
-                <strong>Your Top Receiving Language:</strong> ${topReceiving.name}<br>
-                You feel most loved when you receive ${topReceiving.name.toLowerCase()}. This fills your emotional tank.
-            </div>
-        `;
+        const t = TRANSLATIONS[this.currentLanguage];
         
-        // Add matching insight
+        let insights = t['insight-top-giving']
+            .replace('${language}', topGiving.name)
+            .replace('${languageLower}', topGiving.name.toLowerCase());
+        
+        insights = `<div class="insight">${insights}</div>`;
+        
+        insights += `<div class="insight">` + t['insight-top-receiving']
+            .replace('${language}', topReceiving.name)
+            .replace('${languageLower}', topReceiving.name.toLowerCase()) + `</div>`;
+        
         if (topGiving.code === topReceiving.code) {
-            insights += `
-                <div class="insight">
-                    <strong>Perfect Symmetry!</strong><br>
-                    Your giving and receiving languages match (${topGiving.name}). You naturally give what you want to receive. 
-                    Look for partners who also value ${topGiving.name.toLowerCase()}, or be patient teaching others how you express love.
-                </div>
-            `;
+            insights += `<div class="insight">` + t['insight-perfect-symmetry']
+                .replace('${language}', topGiving.name)
+                .replace('${languageLower}', topGiving.name.toLowerCase()) + `</div>`;
         } else {
-            insights += `
-                <div class="insight">
-                    <strong>The Golden Rule vs. The Platinum Rule:</strong><br>
-                    You give love through ${topGiving.name.toLowerCase()} but receive it best through ${topReceiving.name.toLowerCase()}. 
-                    Remember: your partner might need something different than what you naturally give. The ideal partner gives ${topReceiving.name.toLowerCase()} 
-                    and appreciates receiving ${topGiving.name.toLowerCase()}.
-                </div>
-            `;
+            insights += `<div class="insight">` + t['insight-golden-rule']
+                .replace('${givingLower}', topGiving.name.toLowerCase())
+                .replace('${receivingLower}', topReceiving.name.toLowerCase()) + `</div>`;
         }
         
-        // Add compatibility tips
-        insights += `
-            <div class="insight">
-                <strong>💡 Relationship Tips:</strong><br>
-                • Communicate your top receiving language (${topReceiving.name}) to your partner clearly<br>
-                • Don't assume your partner wants the same love language you give (${topGiving.name})<br>
-                • Ask your partner to take this quiz too!<br>
-                • The best relationships have partners who intentionally learn each other's languages
-            </div>
-        `;
+        insights += `<div class="insight">` + t['insight-tips']
+            .replace('${receiving}', topReceiving.name)
+            .replace('${giving}', topGiving.name) + `</div>`;
         
         container.innerHTML = insights;
     },
@@ -279,13 +355,16 @@ const app = {
         const percentage = (completedQuestions / totalQuestions) * 100;
         document.getElementById('progressFill').style.width = percentage + '%';
         
+        const t = TRANSLATIONS[this.currentLanguage];
         let stageText = '';
         if (this.currentSection === 'intro') {
-            stageText = 'Ready to start!';
+            stageText = t['ready-to-start'];
         } else if (this.currentSection === 'results') {
-            stageText = 'Complete! 🎉';
+            stageText = t['complete'];
         } else {
-            stageText = `Question ${completedQuestions + 1} of ${totalQuestions}`;
+            stageText = t['question-progress']
+                .replace('${current}', completedQuestions + 1)
+                .replace('${total}', totalQuestions);
         }
         
         document.getElementById('stageInfo').textContent = stageText;
